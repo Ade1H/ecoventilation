@@ -1,0 +1,309 @@
+/* App.css - Global Styles with Squarespace Variables */
+
+/* ============================================
+   ROOT CSS VARIABLES (From your Squarespace CSS)
+   ============================================ */
+
+:root {
+  /* Color Variables - HSL Format */
+  --white-hsl: 0, 0%, 100%;
+  --black-hsl: 0, 0%, 0%;
+  --safeLightAccent-hsl: 152.85, 80.12%, 33.53%;
+  --safeDarkAccent-hsl: 152.85, 80.12%, 33.53%;
+  --safeInverseAccent-hsl: 0, 0%, 100%;
+  --safeInverseLightAccent-hsl: 0, 0%, 100%;
+  --safeInverseDarkAccent-hsl: 0, 0%, 100%;
+  --accent-hsl: 152.85, 80.12%, 33.53%;
+  --lightAccent-hsl: 148.7, 18.11%, 75.1%;
+  --darkAccent-hsl: 154.29, 50%, 5.49%;
+  
+  /* Color Functions */
+  --white: hsla(var(--white-hsl), 1);
+  --black: hsla(var(--black-hsl), 1);
+  --accent: hsla(var(--accent-hsl), 1);
+  --light-accent: hsla(var(--lightAccent-hsl), 1);
+  --dark-accent: hsla(var(--darkAccent-hsl), 1);
+  --safe-light-accent: hsla(var(--safeLightAccent-hsl), 1);
+  --safe-dark-accent: hsla(var(--safeDarkAccent-hsl), 1);
+  
+  /* Typography */
+  --base-font-size: 16px;
+  --heading-font-family: "Montserrat", sans-serif;
+  --heading-font-weight: 600;
+  --heading-text-transform: uppercase;
+  --heading-line-height: 1.6em;
+  
+  --body-font-family: "Poppins", sans-serif;
+  --body-font-weight: 300;
+  --body-line-height: 1.6em;
+  
+  --meta-font-family: "Poppins", sans-serif;
+  --meta-font-weight: 500;
+  --meta-letter-spacing: -0.02em;
+  --meta-line-height: 1.6em;
+  
+  /* Font Sizes */
+  --heading-1-size: 3.1rem;
+  --heading-2-size: 2.5rem;
+  --heading-3-size: 1.5rem;
+  --heading-4-size: 1rem;
+  --large-text-size: 1.1rem;
+  --normal-text-size: 1rem;
+  --small-text-size: 0.9rem;
+  --normal-meta-size: 1rem;
+  
+  /* Form Styling */
+  --form-field-border-radius: 5px;
+  --form-field-border-thickness: 1px;
+  --form-field-padding-vertical: 5px;
+  --form-field-padding-horizontal: 10px;
+  --form-label-spacing-bottom: 6px;
+  --form-field-spacing-bottom: 31px;
+  
+  /* Button Styling */
+  --primary-button-border-radius: 0px 90px 0px 90px; /* Asymmetric */
+  --primary-button-padding-x: 2.8em;
+  --primary-button-padding-y: 0.8em;
+  --primary-button-stroke: 1px;
+  
+  /* Layout */
+  --previous-section-divider-offset: 0px;
+  
+  /* Course Specific (from your variables) */
+  --course-item-nav-text-color: var(--light-accent);
+  --course-list-grid-layout-course-item-border-color: var(--dark-accent);
+  
+  /* Component Colors */
+  --tweak-blog-item-pagination-icon-color: var(--black);
+  --tweak-summary-block-read-more-color: var(--black);
+  --tweak-product-basic-item-title-color: var(--black);
+  --tweak-newsletter-block-title-color: var(--dark-accent);
+  --site-title-color: var(--dark-accent);
+  
+  /* Button Colors */
+  --tertiary-button-background-color: hsla(140, 94%, 21%, 1);
+  --list-section-simple-button-background-color: hsla(162.86, 3.78%, 36.27%, 1);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  font-size: var(--base-font-size);
+  line-height: var(--body-line-height);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+}
+
+/* ============================================
+   APP LAYOUT STYLES
+   ============================================ */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Card styling - can be used for other cards */
+.card {
+  padding: 2em;
+  background: var(--white);
+  border-radius: var(--form-field-border-radius);
+  border: var(--form-field-border-thickness) solid hsla(var(--lightAccent-hsl), 0.3);
+}
+
+/* Light text for info */
+.read-the-docs {
+  color: hsla(var(--black-hsl), 0.5);
+}
+
+/* ============================================
+   TYPOGRAPHY CLASSES
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  text-transform: var(--heading-text-transform);
+  line-height: var(--heading-line-height);
+  color: var(--dark-accent);
+}
+
+h1 {
+  font-size: var(--heading-1-size);
+}
+
+h2 {
+  font-size: var(--heading-2-size);
+}
+
+h3 {
+  font-size: var(--heading-3-size);
+}
+
+h4 {
+  font-size: var(--heading-4-size);
+}
+
+p {
+  font-size: var(--normal-text-size);
+  line-height: var(--body-line-height);
+  margin-bottom: 1em;
+}
+
+.large-text {
+  font-size: var(--large-text-size);
+}
+
+.small-text {
+  font-size: var(--small-text-size);
+}
+
+.meta-text {
+  font-family: var(--meta-font-family);
+  font-weight: var(--meta-font-weight);
+  letter-spacing: var(--meta-letter-spacing);
+  font-size: var(--normal-meta-size);
+  line-height: var(--meta-line-height);
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.primary-button {
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: var(--primary-button-border-radius);
+  padding: var(--primary-button-padding-y) var(--primary-button-padding-x);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: var(--primary-button-stroke) solid transparent;
+}
+
+.primary-button:hover {
+  background-color: hsla(var(--accent-hsl), 0.9);
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+
+.form-field {
+  margin-bottom: var(--form-field-spacing-bottom);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--meta-font-family);
+  font-weight: var(--meta-font-weight);
+  margin-bottom: var(--form-label-spacing-bottom);
+  color: var(--dark-accent);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--form-field-padding-vertical) var(--form-field-padding-horizontal);
+  border-radius: var(--form-field-border-radius);
+  border: var(--form-field-border-thickness) solid hsla(var(--black-hsl), 0.2);
+  font-family: var(--body-font-family);
+  font-size: var(--normal-text-size);
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px hsla(var(--accent-hsl), 0.1);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: min(var(--base-font-size), 16px);
+  }
+  
+  h1 {
+    font-size: calc(var(--heading-1-size) * 0.8);
+  }
+  
+  h2 {
+    font-size: calc(var(--heading-2-size) * 0.8);
+  }
+  
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 1rem;
+  }
+  
+  .card {
+    padding: 1.5em;
+  }
+  
+  .primary-button {
+    padding: 0.6em 1.8em;
+  }
+}
+
+/* ============================================
+   HELPER CLASSES
+   ============================================ */
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-dark-accent {
+  color: var(--dark-accent);
+}
+
+.text-light-accent {
+  color: var(--light-accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-light-accent {
+  background-color: var(--light-accent);
+}
+
+.bg-dark-accent {
+  background-color: var(--dark-accent);
+}
