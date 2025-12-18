@@ -3,9 +3,10 @@ import HeroCarousel from '../components/HeroCarousel';
 import ServiceCard from '../components/ServiceCard';
 import './Home.css';
 
-// Du måste lägga till din bild i mappen public/images eller src/assets
-// För detta exempel antar jag att din bild ligger i public/images/ eller src/assets/
-// Du kan använda import om bilden är i src/assets eller en relativ sökväg om den är i public/
+// Import your images if they are in src/assets
+// If images are in public folder, use relative paths
+import serviceImage1 from '../assets/image/bildpappaochson.png';
+import serviceImage2 from '../assets/image/ftx.png';
 
 export default function Home() {
   const services = [
@@ -76,38 +77,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Section - Lägg till detta efter Services Section */}
+      {/* First Image Section */}
       <section className="image-section">
         <div className="container">
           <div className="image-container">
-            {/* Välj en av dessa alternativ beroende på var din bild finns */}
-            
-            {/* Alternativ 1: Om bilden är i public/images/ */}
             <img 
-              src="src/assets/image/bildpappaochson.png" 
-              alt="Beskrivande text för bilden" 
+              src={serviceImage1} 
+              alt="Expertpersonal som utför ventilationsservice" 
               className="services-image"
+              loading="lazy"
             />
-            
-            {/* Alternativ 2: Om du importerar bilden från src/assets/ */}
-            {/* 
-            import serviceImage from '../assets/your-image.jpg';
-            och använd sedan:
-            <img 
-              src={serviceImage} 
-              alt="Beskrivande text för bilden" 
-              className="services-image"
-            />
-            */}
-            
-            {/* Alternativ 3: Om du vill använda en extern bild */}
-            {/* 
-            <img 
-              src="https://example.com/your-image.jpg" 
-              alt="Beskrivande text för bilden" 
-              className="services-image"
-            />
-            */}
           </div>
         </div>
       </section>
@@ -118,7 +97,7 @@ export default function Home() {
           <div className="section-header">
             <h2>Varför välja oss?</h2>
             <p className="section-subtitle">
-              Vi är stolta över att erbjuda den bästa servicen på marknaden.
+              Vi är stolta över att erbjuda den bästa servicen på marknaden med fokus på kvalitet och kundnöjdhet.
             </p>
           </div>
           
@@ -136,53 +115,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Second Image Section */}
+      <section className="image-section">
+        <div className="container">
+          <div className="image-container">
+            <img 
+              src={serviceImage2} 
+              alt="Modern utrustning för avlopps- och ventilationsservice" 
+              className="services-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <h2>Redo att boka en tjänst?</h2>
-          <p>Kontakta oss för en kostnadsfri konsultation eller bokning.</p>
+          <p>Kontakta oss för en kostnadsfri konsultation eller bokning. Vi är här för att hjälpa dig med alla dina servicebehov.</p>
           <div className="cta-buttons">
             <a href="/contact" className="btn btn-primary">Kontakta oss</a>
             <a href="tel:+46812345678" className="btn btn-secondary">Ring oss</a>
           </div>
         </div>
       </section>
-
-       <section className="image-section">
-        <div className="container">
-          <div className="image-container">
-            {/* Välj en av dessa alternativ beroende på var din bild finns */}
-            
-            {/* Alternativ 1: Om bilden är i public/images/ */}
-            <img 
-              src="src/assets/image/ftx.png" 
-              alt="Beskrivande text för bilden" 
-              className="services-image"
-            />
-            
-            {/* Alternativ 2: Om du importerar bilden från src/assets/ */}
-            {/* 
-            import serviceImage from '../assets/your-image.jpg';
-            och använd sedan:
-            <img 
-              src={serviceImage} 
-              alt="Beskrivande text för bilden" 
-              className="services-image"
-            />
-            */}
-            
-            {/* Alternativ 3: Om du vill använda en extern bild */}
-            {/* 
-            <img 
-              src="https://example.com/your-image.jpg" 
-              alt="Beskrivande text för bilden" 
-              className="services-image"
-            />
-            */}
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }

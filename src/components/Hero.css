@@ -1,15 +1,39 @@
 /* Hero.css */
 .hero {
-  text-align: center;
-  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 4rem 1rem;
   background-color: var(--epv-light);
   border-bottom: 1px solid var(--epv-gray-border);
+  text-align: center;
 }
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .hero h1 {
-  font-size: var(--heading-1-size);
+  font-size: clamp(2rem, 5vw, var(--heading-1-size));
   margin-bottom: 1rem;
   color: var(--epv-dark);
+  line-height: 1.3;
 }
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--epv-dark);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
 .hero .btn-primary {
   background-color: var(--epv-primary);
   color: white;
@@ -17,4 +41,65 @@
   border-radius: var(--button-radius);
   display: inline-block;
   margin-top: 1.5rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.hero .btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 50vh;
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero .btn-primary {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.7rem 1.2rem;
+  }
 }
