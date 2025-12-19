@@ -1,9 +1,0 @@
-﻿{
-  "installCommand": "cd frontend && bash vercel-install.sh",
-  "buildCommand": "cd frontend && npm run build",
-  "outputDirectory": "frontend/dist",
-  "env": {
-    "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
-    "NODE_OPTIONS": "--max_old_space_size=4096"
-  }
-}
