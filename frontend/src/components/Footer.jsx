@@ -1,4 +1,5 @@
 // components/Footer.jsx
+import { Link } from "react-router-dom";
 import './Footer.css';
 
 export default function Footer() {
@@ -20,15 +21,15 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Snabblänkar</h4>
             <ul className="footer-links">
-              <li><a href="/">Hem</a></li>
-              <li><a href="/services">Tjänster</a></li>
-              <li><a href="/contact">Kontakt</a></li>
+              <li><Link to="/">Hem</Link></li>
+              <li><Link to="/services">Tjänster</Link></li>
+              <li><Link to="/contact">Kontakt</Link></li>
             </ul>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} EP Ventilation. Alla rättigheter förbehållna.</p>
+          <p>&copy; {new Date().getFullYear()} ECO Ventilation. Alla rättigheter förbehållna.</p>
         </div>
       </div>
     </footer>

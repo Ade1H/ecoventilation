@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import './Navbar.css';
 
 export default function Navbar() {
@@ -10,18 +11,20 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-<a className="navbar-brand navbar-brand-with-tagline" href="/">
-  <img 
-    src="src/assets/image/logo.png" 
-    alt="FTX Logo" 
-    className="navbar-logo"
-  />
-  <div className="navbar-brand-content">
-    <span className="company-name">Ecoventilation</span>
-    <span className="company-tagline mobile-hide-text">ventilation Service & Installation</span>
-  </div>
-</a>
-      
+      <Link className="navbar-brand navbar-brand-with-tagline" to="/">
+        <img 
+          src="src/assets/image/logo.png" 
+          alt="Ecoventilation Logo" 
+          className="navbar-logo"
+        />
+        <div className="navbar-brand-content">
+          <span className="company-name">Ecoventilation</span>
+          <span className="company-tagline mobile-hide-text">
+            Ventilation Service & Installation
+          </span>
+        </div>
+      </Link>
+
       {/* Mobile menu toggle button */}
       <button 
         className="navbar-toggle" 
@@ -32,16 +35,16 @@ export default function Navbar() {
         <span></span>
         <span></span>
       </button>
-      
+
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
         <li>
-          <a href="/" onClick={() => setIsMenuOpen(false)}>Hem</a>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>Hem</Link>
         </li>
         <li>
-          <a href="/services" onClick={() => setIsMenuOpen(false)}>Tjänster</a>
+          <Link to="/services" onClick={() => setIsMenuOpen(false)}>Tjänster</Link>
         </li>
         <li>
-          <a href="/contact" onClick={() => setIsMenuOpen(false)}>Kontakt</a>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Kontakt</Link>
         </li>
       </ul>
     </nav>
