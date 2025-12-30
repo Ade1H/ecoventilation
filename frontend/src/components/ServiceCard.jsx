@@ -11,7 +11,7 @@ export default function ServiceCard({ title, description, image }) {
 
       <h3>{title}</h3>
       <p>{description}</p>
-      <a href="/services" className="service-link">Läs mer →</a>
+      <a href="/contact" className="service-link">booka tjänst →</a>
     </div>
   );
 }

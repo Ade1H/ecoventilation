@@ -9,6 +9,10 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <Link className="navbar-brand navbar-brand-with-tagline" to="/">
@@ -25,34 +29,38 @@ export default function Navbar() {
         </div>
       </Link>
 
-      {/* Mobile menu toggle button */}
+      {/* Hamburger menu button */}
       <button 
-        className="navbar-toggle" 
+        className={`navbar-toggle ${isMenuOpen ? 'active' : ''}`} 
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
       </button>
 
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
         <li>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>Hem</Link>
+          <Link to="/" onClick={closeMenu}>Hem</Link>
         </li>
         <li>
-          <Link to="/services" onClick={() => setIsMenuOpen(false)}>Tjänster</Link>
+          <Link to="/services" onClick={closeMenu}>Tjänster</Link>
         </li>
         <li>
-          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Kontakt</Link>
+          <Link to="/contact" onClick={closeMenu}>Kontakt</Link>
         </li>
         <li>
-          <Link to="/careers" onClick={() => setIsMenuOpen(false)}>kariär</Link>
+          <Link to="/careers" onClick={closeMenu}>Kariär</Link>
         </li>
         <li>
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>om</Link>
+          <Link to="/about" onClick={closeMenu}>Om</Link>
         </li>
       </ul>
+
+      {/* Overlay for mobile */}
+      {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
     </nav>
   );
 }

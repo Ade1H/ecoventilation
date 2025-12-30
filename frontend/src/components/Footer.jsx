@@ -14,7 +14,7 @@ export default function Footer() {
           
           <div className="footer-section">
             <h4>Kontakt</h4>
-            <p>Email: info@ECOventilation.se</p>
+            <p>Email: johan.karlsson@ECOventilation.se</p>
             <p>Telefon: 08-123 456 78</p>
           </div>
           

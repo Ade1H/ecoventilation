@@ -84,10 +84,12 @@ export default function Contact() {
               <label htmlFor="service" className="form-label">Tjänst</label>
               <select id="service" name="service" className="form-select">
                 <option value="">Välj tjänst</option>
-                <option value="ventilation">Ventilationsservice</option>
-                <option value="avlopp">Avloppsservice</option>
-                <option value="dammsugare">Centraldammsugare</option>
-                <option value="other">Annat</option>
+                <option value="ventilation">Rensning imkanal</option>
+                <option value="avlopp">Rensning frånluft</option>
+                <option value="dammsugare">Rensning tilluft</option>
+                <option value="other">Rensning luft luft</option>
+                <option value="other">FTX/värmeväxlare</option>
+                <option value="other">Avlopsrensning/spolning</option>
               </select>
             </div>
 
@@ -108,9 +110,8 @@ export default function Contact() {
 
           <div className="info-item">
             <h4 className="info-subtitle">Kontaktuppgifter</h4>
-            <p><strong>E-post:</strong> josef@ecoventilation.se</p>
-            <p><strong>Telefon:</strong> 08-123 456 78</p>
-            <p><strong>Mobil:</strong> 070-123 45 67</p>
+            <p><strong>E-post:</strong> johan.karlsson@ecoventilation.se</p>
+            <p><strong>Mobil:</strong> </p>
           </div>
 
           <div className="info-item">
@@ -128,9 +129,14 @@ export default function Contact() {
 
           <div className="info-item">
             <h4 className="info-subtitle">Besöksadress</h4>
-            <p>EP Ventilation AB</p>
-            <p>Industrigatan 15</p>
-            <p>123 45 Stockholm</p>
+            <p>Ecoventilation AB</p>
+            <p>Petregatan 1</p>
+            <p>802 50 Gävle</p>
+            <p>Ecoview Solution AB</p>
+            <p>Orgnummer: 559143-3957</p>
+            
+
+
           </div>
         </div>
       </div>

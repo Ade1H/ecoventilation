@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   background-color: var(--epv-white);
   border-bottom: 1px solid var(--epv-border-gray);
   position: sticky;
@@ -18,6 +18,7 @@
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  z-index: 1001;
 }
 
 .navbar-brand:hover {
@@ -26,14 +27,14 @@
 
 /* Logo Styling */
 .navbar-logo {
-  height: 45px; /* Standardhöjd för logo */
+  height: 45px;
   width: auto;
-  max-width: 180px; /* Max bredd för logo */
+  max-width: 180px;
   object-fit: contain;
   display: block;
 }
 
-/* Text bredvid logo (om du vill behålla texten) */
+/* Text beside logo */
 .navbar-brand-text {
   font-family: var(--heading-font-family);
   font-weight: 700;
@@ -47,7 +48,7 @@
   color: var(--epv-primary-dark);
 }
 
-/* Alternativ: Logo med text under (för större skärmar) */
+/* Alternative: Logo with text under (for larger screens) */
 .navbar-brand-with-tagline {
   display: flex;
   align-items: center;
@@ -74,12 +75,14 @@
   margin-top: 0.1rem;
 }
 
+/* Navigation Links */
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 2rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar-links a {
@@ -111,61 +114,98 @@
   width: 100%;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
+/* Hamburger Menu Button */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--epv-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 992px) {
   .navbar {
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.5rem;
   }
   
-  /* Justera logo för mobil */
+  /* Show hamburger menu */
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  /* Adjust logo for mobile */
   .navbar-logo {
     height: 35px;
     max-width: 140px;
   }
   
-  /* Göm text bredvid logo på mobil om du vill */
   .navbar-brand-text {
     font-size: 1.25rem;
     margin-left: 0.5rem;
   }
   
-  /* Alternativ: Dölj text helt på mobil */
   .mobile-hide-text {
     display: none;
   }
   
-  /* Alternativ: Visa bara logo på mycket små skärmar */
-  @media (max-width: 480px) {
-    .navbar-logo {
-      height: 30px;
-      max-width: 120px;
-    }
-    
-    .navbar-brand-text {
-      display: none;
-    }
-    
-    .company-name,
-    .company-tagline {
-      display: none;
-    }
-  }
-  
+  /* Navigation links for mobile */
   .navbar-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
     flex-direction: column;
     background-color: var(--epv-white);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    padding: 5rem 2rem 2rem;
     gap: 0;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
   }
   
   .navbar-links.active {
-    display: flex;
+    right: 0;
   }
   
   .navbar-links li {
@@ -174,8 +214,9 @@
   
   .navbar-links a {
     display: block;
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--epv-border-gray);
+    font-size: 1.1rem;
   }
   
   .navbar-links a::after {
@@ -185,9 +226,38 @@
   .navbar-links a:last-child {
     border-bottom: none;
   }
+  
+  .menu-overlay {
+    display: block;
+  }
+  
+  /* Hide company tagline on smaller screens */
+  .company-tagline {
+    display: none;
+  }
 }
 
-/* Större skärmar */
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar-logo {
+    height: 30px;
+    max-width: 120px;
+  }
+  
+  .company-name {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-links {
+    width: 250px;
+  }
+}
+
+/* Large Screens */
 @media (min-width: 1200px) {
   .navbar-logo {
     height: 50px;
@@ -201,4 +271,9 @@
   .company-name {
     font-size: 1.6rem;
   }
+}
+
+/* Prevent body scrolling when menu is open */
+body.menu-open {
+  overflow: hidden;
 }

@@ -7,7 +7,7 @@ import franluftImage from "../assets/image/Franluft.jpg"; // Exempel, importera 
 import TilLuft from "../assets/image/TillLuft.jpg"; // Exempel, importera fler bilder om du vill
 import LuftLuft from "../assets/image/LuftLuft.jpg"; // Exempel, importera fler bilder om du vill
 import Ftx from "../assets/image/ftx.png"; // Exempel, importera fler bilder om du vill
-import CentralDamsugare from "../assets/image/CentralDamsugare.png"; // Exempel, importera fler bilder om du vill
+import CentralDamsugare from "../assets/image/vloop.png"; // Exempel, importera fler bilder om du vill
 
 export default function Services() {
   useEffect(() => {
@@ -56,9 +56,9 @@ export default function Services() {
       image: Ftx
     },
     {
-      title: "Centraldamsugare",
+      title: "Avlopsrensning/spolning",
       description:
-        "En centraldammsugare är en smart och effektiv lösning för att hålla ditt hem rent och fritt från damm och smuts. Men för att den ska fortsätta fungera optimalt är det viktigt att genomföra regelbundet underhåll. Att investera tid och resurser i att regelbundet kontrollera och underhålla centralldammsugaren lönar sig i längden.",
+      "Ingen gillar stopp i avloppet  och det händer lättare än man tror. Hår, matrester och smuts kan snabbt fastna i vasken eller duschbrunnen och orsaka att vattnet rinner långsamt eller till och med svämmar över.Känner du att vattnet rinner trögt eller märker en unken lukt i duschen? Det är signaler på att det är dags att ta hand om avloppen.Med regelbunden förebyggande avloppsrensning håller du rören rena, undviker stopp och dålig lukt  och minskar samtidigt risken för mögel. En liten insats nu kan spara både tid och kostnader senare.",
       image: CentralDamsugare
     }
   ];
